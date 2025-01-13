@@ -1,0 +1,12 @@
+venv/
+hack_backend/db.sqlite3
+.idea
+hack_backend/static
+.jpeg
+*media*
+*.py[cod]
+migrations
+envi
+.pyc
+.DS_Store
+__pycache__/ 
