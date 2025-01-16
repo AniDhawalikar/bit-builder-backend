@@ -5,7 +5,7 @@ hack_backend/static
 .jpeg
 *media*
 *.py[cod]
-migrations
+# migrations
 envi
 .pyc
 .DS_Store

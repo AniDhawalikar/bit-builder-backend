@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 import dj_database_url
+import datetime
 from pathlib import Path
 import os
 
@@ -27,9 +28,10 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG", "False").lower() == "true"
+# DEBUG = True
 
 ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(",")
-
+# ALLOWED_HOSTS = [ "*"]
 
 # Application definition
 
@@ -41,6 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'corsheaders',
+    'rest_framework',
+    'application',
 ]
 
 MIDDLEWARE = [
@@ -74,6 +78,14 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'hack_backend.wsgi.application'
+
+
+# SECRET_KEY = 'cslqa2-u4b@y#*)rqkn%b#gj)obd^yx@#-3k14gk(($@!4phb3'
+
+JWT_SETTINGS = {
+    'ACCESS_TOKEN_LIFETIME': datetime.timedelta(hours=1),
+    'ALGORITHM': 'HS256',
+}
 
 
 # Database
